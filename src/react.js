@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Perf from "react-addons-perf";
 window.ReactPerf = Perf;
 
-import {createGames} from "./data";
+import {createGames} from "./react.data";
 
 class App extends React.Component {
     constructor(props) {

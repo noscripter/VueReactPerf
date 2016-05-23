@@ -33,7 +33,7 @@ export function createGame(delay) {
     return Rx.Observable.interval(EVENT_INTERVAL)
         .flatMap((i) => {
             const $ = Rx.Observable.of(i);
-            return i === 0 ? $ : $.delay(delay * 1000);
+            return i === 0 ? $ : $.delay(delay * 100);
         })
         .scan((game, tick) => {
             return updateGame(game);
