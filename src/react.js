@@ -56,11 +56,11 @@ class Games extends React.Component {
 }
 
 class Game extends React.Component {
-    
+
     shouldComponentUpdate(nextProps){
         return nextProps.game !== this.props.game;
     }
-    
+
     render() {
         const game = this.props.game;
         const score = `${game.getIn(["score", "home"])}-${game.getIn(["score", "away"])}`;
@@ -102,7 +102,7 @@ class Player extends React.Component {
             <td>
                 <div className="player">
                     <p className="player__name">
-                        <div>{player.get("name") }</div>
+                        <span>{player.get("name") }</span>
                         <span className="u-small">
                             {player.get("invitedNextWeek") ? "Not coming again" : "Doing well"}
                         </span>
