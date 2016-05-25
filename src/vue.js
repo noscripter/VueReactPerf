@@ -63,7 +63,7 @@ Vue.component("player", {
             return "player__effort " + (this.player.effortLevel < 5 ? "player__effort--low" : "player__effort--high");
         },
         nextWeekMsg: function () {
-            return this.playerinvitedNextWeek ? "Not coming again" : "Doing well";
+            return this.player.invitedNextWeek ? "Not coming again" : "Doing well";
         }
     },
     template: `
