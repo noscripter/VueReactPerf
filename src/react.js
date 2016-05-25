@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Immutable from 'immutable';
 //import Perf from "react-addons-perf";
 //window.ReactPerf = Perf;
 
@@ -58,7 +59,7 @@ class Games extends React.Component {
 class Game extends React.Component {
 
     shouldComponentUpdate(nextProps){
-        return nextProps.game !== this.props.game;
+        return !Immutable.is(nextProps.game, this.props.game);
     }
 
     render() {
@@ -90,7 +91,7 @@ class Game extends React.Component {
 class Player extends React.Component {
 
     shouldComponentUpdate(nextProps){
-        return nextProps.player !== this.props.player;
+        return !Immutable.is(nextProps.player, this.props.player);
     }
 
     render() {
