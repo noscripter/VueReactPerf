@@ -49,6 +49,7 @@ function updateGame(game) {
 
 function generateFakeGame() {
     return Immutable.fromJS({
+        id: faker.random.uuid(),
         clock: 0,
         score: {
             home: 0,
