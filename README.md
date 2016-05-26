@@ -1,3 +1,7 @@
+## Blog posts
+Part 1 - https://engineering.footballradar.com/from-a-react-point-of-vue-comparing-reactjs-to-vuejs-for-dynamic-tabular-data/
+Part 2 - https://engineering.footballradar.com/a-fairer-vue-of-react-comparing-react-to-vue-for-dynamic-tabular-data-part-2/
+
 ## Getting started
 `npm install`
 
