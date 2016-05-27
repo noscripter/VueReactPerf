@@ -54,6 +54,7 @@ td, th {
 
 .player__effort {
     width: 20px;
+    transition: background-color 2s;
 }
 
 .player__effort--low {

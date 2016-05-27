@@ -30,7 +30,7 @@ function updateGame(game) {
 
     game = maybeUpdate(5, game, () => game.updateIn(["score", "home"], (s) => s + 1));
     game = maybeUpdate(5, game, () => game.updateIn(["score", "away"], (s) => s + 1));
-    
+
     game = maybeUpdate(8, game, () => game.updateIn(["cards", "yellow"], (s) => s + 1));
     game = maybeUpdate(2, game, () => game.updateIn(["cards", "red"], (s) => s + 1));
 
@@ -39,9 +39,13 @@ function updateGame(game) {
     const randomPlayerIndex = randomNum(0, 4);
     const effortLevel = randomNum();
     const invitedNextWeek = faker.random.boolean();
+    const moreDistance = randomNum(0, 100);
 
     game = game.updateIn(["players", randomPlayerIndex], (player) => {
-        return player.set("effortLevel", effortLevel).set("invitedNextWeek", invitedNextWeek);
+        return player
+            .set("effortLevel", effortLevel)
+            .set("invitedNextWeek", invitedNextWeek)
+            .update("distanceRan", (d) => d + moreDistance);
     });
 
     return game;
@@ -56,8 +60,8 @@ function generateFakeGame() {
             away: 0
         },
         teams: {
-          home: faker.address.city(),  
-          away: faker.address.city()  
+            home: faker.address.city(),
+            away: faker.address.city()
         },
         outrageousTackles: 0,
         cards: {
@@ -72,7 +76,8 @@ function generateFakePlayer() {
     return {
         name: faker.name.findName(),
         effortLevel: randomNum(),
-        invitedNextWeek: faker.random.boolean()
+        invitedNextWeek: faker.random.boolean(),
+        distanceRan: 0
     }
 }
 
