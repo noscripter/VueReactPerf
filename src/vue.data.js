@@ -55,9 +55,11 @@ function updateGame(game) {
     const randomPlayerIndex = randomNum(0, 4);
     const effortLevel = randomNum();
     const invitedNextWeek = faker.random.boolean();
+    const moreDistance = randomNum(0, 100);
 
     game.players[randomPlayerIndex].effortLevel = effortLevel;
     game.players[randomPlayerIndex].invitedNextWeek = invitedNextWeek;
+    game.players[randomPlayerIndex].distanceRan += moreDistance;    
 
     return game;
 }
@@ -87,7 +89,8 @@ function generateFakePlayer() {
     return {
         name: faker.name.findName(),
         effortLevel: randomNum(),
-        invitedNextWeek: faker.random.boolean()
+        invitedNextWeek: faker.random.boolean(),
+        distanceRan: 0
     }
 }
 
