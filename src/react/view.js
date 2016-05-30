@@ -5,7 +5,7 @@ import {Subject} from "rx";
 //import Perf from "react-addons-perf";
 //window.ReactPerf = Perf;
 
-import {createGames} from "./react.data";
+import {createGames} from "./data";
 
 const popoverState$ = new Subject();
 

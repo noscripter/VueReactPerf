@@ -1,5 +1,5 @@
 import Vue from "vue";
-import {createStore} from "./vue.data.js";
+import {createStore} from "./data";
 
 const store = createStore(50);
 
